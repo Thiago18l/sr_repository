@@ -36,6 +36,12 @@ pub fn ownership() {
 
     let mut s4 = String::from("Hello");
     println!("{}", mutable_ref(&mut s4));
+
+
+    // First word
+    let word = String::from("Thiago Lopes");
+    let result_w = first_word(&word);
+    println!("{}", result_w);
 }
 
 
@@ -70,4 +76,17 @@ fn calculate_length_v2(s: &String) -> usize {
 fn mutable_ref(some_string: &mut String) -> &String {
     some_string.push_str(", sir");
     some_string
+}
+
+// First Word
+
+fn first_word(str: &String) -> &str {
+    let bytes = str.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &str[0..i];
+        }
+    }
+    &str[..]
 }
