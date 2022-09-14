@@ -22,8 +22,20 @@ pub fn ownership() {
     let string_value = String::from("Hello");
     let s3 = takes_and_gives_back(string_value);
     println!("{}, {}", s3, string_value_one);
+
+    let (v1, len) = calculate_length(s3);
+
+    let string_v2 = String::from("Version2");
+    let len_v2 = calculate_length_v2(&string_v2);
+
+    println!("{}, {}", string_v2, len_v2);
+    println!("The length of '{}' is {}", v1, len);
     intern_ownership(s2);
     make_copy(x);
+
+
+    let mut s4 = String::from("Hello");
+    println!("{}", mutable_ref(&mut s4));
 }
 
 
@@ -44,4 +56,18 @@ fn intern_ownership(value: String) {
 
 fn make_copy(value: i32) {
     println!("{}", value);
+}
+
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len();
+    (s, length)
+}
+
+fn calculate_length_v2(s: &String) -> usize {
+    s.len()
+}
+
+fn mutable_ref(some_string: &mut String) -> &String {
+    some_string.push_str(", sir");
+    some_string
 }
