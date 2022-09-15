@@ -1,5 +1,5 @@
 use crate::data::resources::build_user;
-
+use crate::data::resources::area;
 
 pub struct User {
     pub username: String,
@@ -25,4 +25,10 @@ pub fn data_structs() {
     // Print user
     let user2: User = build_user(user.email, user.username);
     println!("{}, {}", user2.username, user2.email);
+
+
+    // Tuples
+
+    let rectangle = (30, 50);
+    println!("The area of the rectangle is {} square pixels", area(rectangle));
 }
