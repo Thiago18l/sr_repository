@@ -1,4 +1,5 @@
 use crate::data::structs::User;
+use crate::data::structs::Rectangle;
 pub fn build_user(email: String, username: String) -> User {
     User {
         email,
@@ -8,6 +9,6 @@ pub fn build_user(email: String, username: String) -> User {
     }
 }
 
-pub fn area(dimensions: (u32, u32)) -> u32 {
-    dimensions.0 * dimensions.1
+pub fn area(dimensions: &Rectangle) -> u32 {
+    dimensions.width * dimensions.height
 }

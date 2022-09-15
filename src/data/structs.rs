@@ -8,6 +8,11 @@ pub struct User {
     pub active: bool
 }
 
+pub struct Rectangle {
+    pub width: u32,
+    pub height: u32,
+}
+
 pub fn data_structs() {
     let user = User {
         username: String::from("Thiago"),
@@ -29,6 +34,6 @@ pub fn data_structs() {
 
     // Tuples
 
-    let rectangle = (30, 50);
-    println!("The area of the rectangle is {} square pixels", area(rectangle));
+    let rectangle: Rectangle = Rectangle { width: 25, height: 30 };
+    println!("The area of the rectangle is {} square pixels", area(&rectangle));
 }
