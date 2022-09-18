@@ -13,6 +13,12 @@ pub struct Rectangle {
 }
 
 impl Rectangle {
+    fn square(size: u32) -> Rectangle {
+        Rectangle { width: size, height: size }
+    }
+}
+
+impl Rectangle {
     fn area(&self) -> u32 {
         self.width * self.height
     }
@@ -50,5 +56,14 @@ pub fn data_structs() {
     let rect3 = Rectangle { width: 20, height: 25 };
     println!("Can rect1 holds rect2? {}", rect1.can_hold(&rect2));
     println!("Can rect1 holds rect3? {}", rect1.can_hold(&rect3));
+
+    associated_func_impl();
 }
 
+// Associated functions
+
+fn associated_func_impl() -> () {
+
+    let rec = Rectangle::square(3);
+    println!("width: {}, heigth: {}", rec.width, rec.height);
+}
