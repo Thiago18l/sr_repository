@@ -10,5 +10,6 @@ fn main() {
     routes::user_route::user_route_model();
     ownership::ownership::ownership();
     data::structs::data_structs();
+    data::enum_::main_enum();
     println!("Hello, world!");
 }
