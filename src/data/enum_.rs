@@ -13,6 +13,11 @@ enum Message {
     ChangeColor(i32, i32, i32),
 }
 
+enum Option<T> {
+    Some(T),
+    None,
+}
+
 struct Ipv4Address {
     kind: IpAddr,
 }
@@ -52,4 +57,8 @@ pub fn main_enum() {
 
     let message = Message::Write(String::from("Hello, guys"));
     message.call();
+
+    let some_number = Some(5);
+    let some_string = Some("String");
+    println!("{:?}, {:?}", some_number, some_string);
 }
