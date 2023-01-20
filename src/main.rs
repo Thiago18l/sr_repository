@@ -11,5 +11,6 @@ fn main() {
     ownership::ownership::ownership();
     data::structs::data_structs();
     data::enum_::main_enum();
+    data::coin::show_coins();
     println!("Hello, world!");
 }

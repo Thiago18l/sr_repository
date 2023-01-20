@@ -5,30 +5,12 @@ enum IpAddr {
     V4(Ipv4Addr),
     V6(Ipv6Addr),
 }
-#[derive(Debug)]
-enum Message {
-    Quit,
-    Move { x: i32, y: i32 },
-    Write(String),
-    ChangeColor(i32, i32, i32),
-}
-
-enum Option<T> {
-    Some(T),
-    None,
-}
 
 struct Ipv4Address {
     kind: IpAddr,
 }
 struct Ipv6Address {
     kind: IpAddr,
-}
-
-impl Message {
-    fn call(&self) -> () {
-        println!("{:?}", &self);
-    }
 }
 
 
@@ -54,9 +36,6 @@ pub fn main_enum() {
 
     home.route();
     loopback.route();
-
-    let message = Message::Write(String::from("Hello, guys"));
-    message.call();
 
     let some_number = Some(5);
     let some_string = Some("String");
